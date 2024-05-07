@@ -1,5 +1,7 @@
-import { Center, Flex, Box, Text } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
+
+import { Center, Flex, Text } from "@chakra-ui/react";
+
 import Calculator from "../components/Calculator";
 import LineChart from "../components/LineChart";
 import { addDays, formatDate } from "../constants";
@@ -29,7 +31,7 @@ export default function Page() {
   );
 
   return (
-    <Box>
+    <div>
       <Center alignItems="center" position="absolute" w="100%">
         <Text
           mt={{ base: "32px", md: "48px" }}
@@ -53,6 +55,6 @@ export default function Page() {
         <Calculator onSubmit={(res) => onCalc(res)} onClear={() => onClear()} />
         <LineChart labels={[...chartLabels]} data={[...chartValues]} />
       </Flex>
-    </Box>
+    </div>
   );
 }
